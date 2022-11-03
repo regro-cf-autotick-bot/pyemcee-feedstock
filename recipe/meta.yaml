@@ -1,5 +1,5 @@
 {% set name = "pyemcee" %}
-{% set version = "0.2.2" %}
+{% set version = "0.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyemcee-{{ version }}.tar.gz
-  sha256: 251406148542651c7451a2281ff5248754aa9dfaa514eb35f35b593f70726f16
+  sha256: 28f687ab9417ec2b0b8de538df98dfaecdbcf64709b4551529267813bc16eecc
 
 build:
   number: 0
