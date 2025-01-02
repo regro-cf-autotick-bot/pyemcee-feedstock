@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyemcee-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyemcee-{{ version }}.tar.gz
   sha256: 6277bb06a133a5ab8f4cff1296ff8698ffebbdc41cce600e44b43ff199879721
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.4
+    - python {{ python_min }}
     - numpy >=1.15
     - scipy >=1.2
     - matplotlib-base >=2.2
   run:
-    - python >=3.4
+    - python >={{ python_min }}
     - numpy >=1.15
     - scipy >=1.2
     - matplotlib-base >=2.2
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/mcfit/pyemcee
